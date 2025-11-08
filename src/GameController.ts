@@ -31,6 +31,7 @@ export  class GameState{
     constructor(users:GamePlayer[]){
       this.isfinish = false;
       this.Players = users;
+      this.CoinPlayer = users[0];
     }
   
     //先行がだれかを決める。

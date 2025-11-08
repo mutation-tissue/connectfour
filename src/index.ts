@@ -52,5 +52,8 @@ async function main() {
   r1.close();
 }
 
-
-main();
+// このファイルが直接実行された場合のみmain()を呼び出す
+// テスト実行時には実行されないようにする
+if (require.main === module) {
+  main();
+}

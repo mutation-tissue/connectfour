@@ -33,16 +33,17 @@ export class FieldController {
     addCoinToFiled(addCoinPlace:number, pieceType:number) {
       let addCoinRow:number = -1;
       for(let rowindex = 0; rowindex < this.fieldSizeY; rowindex++){
-        if(this.field[rowindex][addCoinPlace] === 0){
+        if(this.field[addCoinPlace][rowindex] === 0){
           addCoinRow += 1;
         } else {
           break;
         }
+
       }
   
       if(addCoinRow !== -1){
-        this.field[addCoinRow][addCoinPlace]=pieceType;
-        return [addCoinRow, addCoinPlace];
+        this.field[addCoinPlace][addCoinRow]=pieceType;
+        return [addCoinPlace, addCoinRow];
       }
       return [-1,-1];
     }
